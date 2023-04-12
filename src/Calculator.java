@@ -1,43 +1,52 @@
 public class Calculator {
     public static void main(String[] args) {
-        int firstNumber = Integer.parseInt(args[1]);
-        int secondNumber = Integer.parseInt(args[2]);
+        if (args.length > 3) {
+            System.out.println("Ops.. preencha os dados corretamente: [operacao] [primeiro numero] [segundo numero]");
+            return;
+        }
+
+        double firstNumber = Double.parseDouble(args[1]);
+        double secondNumber = Double.parseDouble(args[2]);
 
         switch (args[0]) {
-            case "sum":
-                sum(firstNumber, secondNumber);
+            case "add":
+                System.out.println(addition(firstNumber, secondNumber));
                 break;
 
             case "sub":
-                subtraction(firstNumber, secondNumber);
+                System.out.println(subtraction(firstNumber, secondNumber));
                 break;
 
             case "mul":
-                multiplication(firstNumber, secondNumber);
+                System.out.println(multiplication(firstNumber, secondNumber));
                 break;
 
             case "div":
-                division(firstNumber, secondNumber);
+                if ((firstNumber == 0) || (secondNumber == 0)) {
+                    System.out.println("Ops.. divisão por zero não é permitida!");
+                } else {
+                    System.out.println(division(firstNumber, secondNumber));
+                }
                 break;
 
             default:
-                System.out.println("Ops.. preencha os dados corretamente");
+                System.out.println("Ops.. operação inválida. Use 'add', 'sub', 'mul' ou 'div'.");
         }
     }
 
-    static void sum(int firstNumber, int secondNumber) {
-        System.out.println(firstNumber + secondNumber);
+    static double addition(double firstNumber, double secondNumber) {
+        return firstNumber + secondNumber;
     }
 
-    static void subtraction(int firstNumber, int secondNumber) {
-        System.out.println(firstNumber - secondNumber);
+    static double subtraction(double firstNumber, double secondNumber) {
+        return firstNumber - secondNumber;
     }
 
-    static void multiplication(int firstNumber, int secondNumber) {
-        System.out.println(firstNumber * secondNumber);
+    static double multiplication(double firstNumber, double secondNumber) {
+        return firstNumber * secondNumber;
     }
 
-    static void division(int firstNumber, int secondNumber) {
-        System.out.println(firstNumber / secondNumber);
+    static double division(double firstNumber, double secondNumber) {
+        return firstNumber / secondNumber;
     }
 }
