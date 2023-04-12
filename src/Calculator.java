@@ -9,6 +9,9 @@ public class Calculator {
         else if (args[0].equals("sub")) {
             subtraction(firstNumber, secondNumber);
         }
+        else if (args[0].equals("mult")) {
+            multiplication(firstNumber, secondNumber);
+        }
         else {
             System.out.println("Ops.. preencha os dados corretamente");
         }
@@ -20,5 +23,9 @@ public class Calculator {
 
     static void subtraction(int firstNumber, int secondNumber) {
         System.out.println(firstNumber - secondNumber);
+    }
+
+    static void multiplication(int firstNumber, int secondNumber) {
+        System.out.println(firstNumber * secondNumber);
     }
 }
