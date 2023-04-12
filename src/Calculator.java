@@ -3,20 +3,25 @@ public class Calculator {
         int firstNumber = Integer.parseInt(args[1]);
         int secondNumber = Integer.parseInt(args[2]);
 
-        if (args[0].equals("sum")) {
-            sum(firstNumber, secondNumber);
-        }
-        else if (args[0].equals("sub")) {
-            subtraction(firstNumber, secondNumber);
-        }
-        else if (args[0].equals("mult")) {
-            multiplication(firstNumber, secondNumber);
-        }
-        else if (args[0].equals("div")) {
-            division(firstNumber, secondNumber);
-        }
-        else {
-            System.out.println("Ops.. preencha os dados corretamente");
+        switch (args[0]) {
+            case "sum":
+                sum(firstNumber, secondNumber);
+                break;
+
+            case "sub":
+                subtraction(firstNumber, secondNumber);
+                break;
+
+            case "mul":
+                multiplication(firstNumber, secondNumber);
+                break;
+
+            case "div":
+                division(firstNumber, secondNumber);
+                break;
+
+            default:
+                System.out.println("Ops.. preencha os dados corretamente");
         }
     }
 
